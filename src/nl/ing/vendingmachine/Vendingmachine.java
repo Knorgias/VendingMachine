@@ -1,6 +1,7 @@
 package nl.ing.vendingmachine;
 
 import nl.ing.vendingmachine.exceptions.NotAbleToFillException;
+import nl.ing.vendingmachine.products.abstracts.Product;
 
 import java.util.ArrayList;
 import java.util.List;
