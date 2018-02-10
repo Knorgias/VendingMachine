@@ -1,14 +1,16 @@
 package nl.ing.vendingmachine.products.abstracts;
 
+import nl.ing.vendingmachine.exceptions.ProductExpiredException;
+
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 public abstract class Product {
-    private String name;
-    private String brand;
-    private int priceInCents; // in cents
-    private long expireDate; // in timestamp
+    public String name;
+    public String brand;
+    public int priceInCents; // in cents
+    public long expireDate; // in timestamp
 
     Product(String name, String brand, int priceInCents, long expireDate) { // for childs
         setName(name);
@@ -23,8 +25,11 @@ public abstract class Product {
 
     abstract public String printProductDetails();
 
-    public boolean isExpired() {
-        return this.expireDate < new Timestamp(System.currentTimeMillis()).getTime(); //this is now() in timestamp
+    public boolean isExpired() throws ProductExpiredException {
+        if(this.expireDate < new Timestamp(System.currentTimeMillis()).getTime()/1000000){
+            throw new ProductExpiredException();
+        }
+        return false;
     }
 
     public String getName() {
@@ -55,7 +60,7 @@ public abstract class Product {
         return expireDate;
     }
 
-    public void setExpireDate(long expireDate) {
+    public void setExpireDate(long expireDate){
         this.expireDate = expireDate;
     }
 }
