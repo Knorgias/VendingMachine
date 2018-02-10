@@ -31,6 +31,9 @@ public class VMOperator {
             } while (retrieveProduct(desired_product,Integer.parseInt(age)) == null);//keep asking product and age
                                                                                      // until valid product is typed
                                                                                      //or not underaged
+
+            ///HERE PAYMENT CHECK
+
             System.out.println("Hope to see you again!!");
         }
     }
