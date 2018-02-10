@@ -12,6 +12,8 @@ public class SoftDrink extends Drink {
         super(name, brand, priceInCents, expireDate, volume);
     }
 
+
+
     @Override
     public boolean hasAllergy() {
         return false;
