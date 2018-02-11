@@ -5,7 +5,7 @@ import nl.ing.vendingmachine.products.abstracts.Drink;
 public class SoftDrink extends Drink {
 
     public SoftDrink(String brand, int priceInCents, long expireDate, double volume) {
-        this("soft drink", brand, priceInCents, expireDate, volume);
+        this("soft_drink", brand, priceInCents, expireDate, volume);
     }
 
     public SoftDrink(String name, String brand, int priceInCents, long expireDate, double volume) {

@@ -15,7 +15,7 @@ public class Cappuccino extends Drink implements Fresh {
     }
 
     public Cappuccino(String brand, int priceInCents, long expireDate, double volume) {
-        this("Cappuccino", brand, priceInCents, expireDate, volume);
+        this("cappuccino", brand, priceInCents, expireDate, volume);
     }
 
     public Cappuccino(String name, String brand, int priceInCents, long expireDate, double volume) {
