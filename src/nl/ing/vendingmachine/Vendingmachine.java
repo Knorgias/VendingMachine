@@ -8,7 +8,6 @@ import nl.ing.vendingmachine.products.intefaces.Fresh;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 
 public class Vendingmachine {
@@ -16,7 +15,7 @@ public class Vendingmachine {
 
     //initialize vending machine
     public Vendingmachine() throws ProductExpiredException{
-        products = new ArrayList();
+        products = new ArrayList<>();
         products.add(new Beer("Heineken",300,0x7fffffff,330,16,5));
         products.add(new Cookies("SuperBrand",200,0x7fffffff,1000));
         products.add(new SoftDrink("Fanta",250,0x7fffffff,500));
