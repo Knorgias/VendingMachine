@@ -24,6 +24,7 @@ public class VMOperator {
     }
 
     public void operate() {
+        Product chosenProduct = null;
         String option = "";
         String age = "-1";
         while (true) {
@@ -35,11 +36,15 @@ public class VMOperator {
                 }
                 System.out.println("Your age?");
                 age = readKeyboard(); // get age
-            } while (retrieveProduct(option, Integer.parseInt(age)) == null);//keep asking product and age
+            } while ((chosenProduct = retrieveProduct(option, Integer.parseInt(age))) == null);//keep asking product and age
             // until valid product is typed
             //or not underaged
 
             ///HERE PAYMENT CHECK
+            System.out.println("Pay your product " + chosenProduct.priceInCents);
+            String payment = readKeyboard();
+            Transaction transaction = new Transaction();
+            transaction.completeTransaction(chosenProduct , Integer.parseInt(payment), Integer.parseInt(age));
 
             System.out.println("Hope to see you again!!");
         }
