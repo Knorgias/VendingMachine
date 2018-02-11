@@ -52,7 +52,7 @@ public class VMOperator {
             Transaction transaction = new Transaction();
             transaction.completeTransaction(chosenProduct, Integer.parseInt(payment), Integer.parseInt(age));
             if (transaction.status()) {
-                System.out.println("Thanks for your payment!");
+                System.out.println("Thanks for your payment! Completed at: " + transaction.getTimeDateToString());
                 System.out.println("Your change is: " + transaction.getMoneyChange());
                 vendingmachine.products.remove(chosenProduct);
             } else {

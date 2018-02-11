@@ -11,11 +11,12 @@ public class Transaction {
     private Date timeDate;
     private boolean myStatus = false;
     private static int vmCentsAmount = 10000;
+    private static DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
     private int moneyChange = 0;
 
     /*Constructors */
     Transaction() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         this.timeDate = new Date();
     }
 
@@ -52,6 +53,10 @@ public class Transaction {
 
     public Date getTimeDate() {
         return timeDate;
+    }
+
+    public String getTimeDateToString() {
+        return dateFormat.format(timeDate);
     }
 
     public int getMoneyChange() {
