@@ -10,7 +10,7 @@ public class Coffee extends Drink implements Fresh {
     private boolean withMilk;
 
     public Coffee(String brand, int priceInCents, long expireDate, double volume, String type, int sugar, boolean withMilk) {
-        this("Coffee", brand, priceInCents, expireDate, volume);
+        this("coffee", brand, priceInCents, expireDate, volume);
         this.setType(type);
         this.setSugar(sugar);
         this.setWithMilk(withMilk);
